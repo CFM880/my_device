@@ -1,5 +1,0 @@
-override_android_app {
-    name:"remove_app",
-    base:"Contacts",
-    
-}
