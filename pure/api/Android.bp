@@ -1,0 +1,14 @@
+java_library {     // 模块类型为java库，这个类型与java_library_static是完全一样的
+    name:"api.pure", // 模块名
+    installable: true, // 下面细讲
+    enabled: true,
+    dex_preopt: {
+        enabled: false // 不做preopt
+    },
+    srcs:[
+        "java/**/*.java", // 文件列表
+    ],
+    libs: [
+        "android.hidl.manager-V1.0-java", // 依赖的其他java库
+    ]
+}

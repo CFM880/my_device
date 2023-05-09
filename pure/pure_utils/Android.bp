@@ -1,0 +1,11 @@
+cc_library {                                // 模块类型为c/c++库，同时会编译动态库和静态库
+                                            // 如果要指定编译动态库或者静态库，则应该要用cc_library_shared或则cc_library_static
+    name: "libpure_utils",              
+    vendor: true,
+    export_include_dirs:["src/include"],    // 导出头文件目录，这样其他模块要使用本模块时，就不需要用include_dirs指定头文件目录了。
+    srcs:["src/pure_log.cpp"],              // 源文件列表，如果不想要一个个列出来.
+                                            // 可以使用srcs:["**/*.cpp"]这种方式来查找所有的cpp文件
+    shared_libs: [
+        "liblog"
+    ]
+}

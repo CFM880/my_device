@@ -1,0 +1,51 @@
+// https://ci.android.com/builds/submitted/8326303/linux/latest/view/soong_build.html
+// https://ci.android.com/builds/latest/branches/aosp-build-tools/targets/linux/view/soong_build.html
+
+cc_prebuilt_binary {
+    name: "busybox",
+    srcs: ["vendor/bin/busybox-x86_64"],
+    strip: { none: true, },
+    vendor: true,
+    // Bypass because soname mismatch
+    check_elf_files: false,
+    allow_undefined_symbols: true,  // LIBC_PRIVATE
+}
+// https://ci.android.com/builds/submitted/8326303/linux/latest/raw/java.html#java_import
+java_import {
+    name:"androidasynchttp",
+    installable:true, // 如果这个 jar 包需要安装到系统，则需要配置 installable 为 true。如果只是作为编译时提供接口而已， 则不需要设置 installable。
+    vendor: true,
+    jars:[
+        "libs/jars/android-async-http-1.4.11.jar"
+    ],
+}
+cc_prebuilt_library_shared {
+    name:"pure_utils1",
+    export_include_dirs:["libs/include"],
+    vendor:true,
+    check_elf_files:false,
+    arch: {
+        x86: {
+            srcs:["libs/lib/libpure_utils1.so"],
+             shared_libs:[
+                "liblog"
+            ]
+        },
+        x86_64:{
+            srcs:["libs/lib64/libpure_utils1.so"],
+            shared_libs:[
+                "liblog"
+            ]
+        }
+    },
+    compile_multilib: "both",
+    strip: {
+        none: true,
+    },
+}
+android_app_import {
+    name:"nRFConnect",
+    apk:"apk/nRF.Connect.4.25.0.apk",
+    vendor:true,
+    presigned:true,
+}
