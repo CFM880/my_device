@@ -1,7 +1,15 @@
+android_app_certificate {
+    name: "cfm880_release_key",
+    certificate: "security/releasekey",
+}
 android_app {
     srcs:["java/**/*.java"],
     resource_dirs:["res"],
     name: "PureSettings",
-    certificate: "platform",
-    platform_apis: true
+    certificate: ":cfm880_release_key",
+    platform_apis: true,
+    static_libs: [
+        "com.pure.api",
+    ]
+
 }
