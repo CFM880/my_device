@@ -1,0 +1,7 @@
+java_library {
+    name: "com.pure.api",
+    installable: true,
+    srcs: [
+        "java/**/*.java",
+    ]
+}

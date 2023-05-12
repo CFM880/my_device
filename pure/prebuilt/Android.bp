@@ -48,4 +48,5 @@ android_app_import {
     apk:"apk/nRF.Connect.4.25.0.apk",
     vendor:true,
     presigned:true,
+    default_dev_cert:false,
 }
