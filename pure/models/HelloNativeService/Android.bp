@@ -1,0 +1,11 @@
+cc_binary {
+    name: "HelloNativeService",
+    srcs: ["main.cpp", "HelloNativeService.cpp"],
+
+    shared_libs: [
+        "liblog",
+        "libcutils",
+        "libutils",
+        "libbinder",
+    ],
+}
