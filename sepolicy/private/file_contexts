@@ -1,0 +1,2 @@
+# 最后一行必须是回车换行
+/system/bin/HelloNativeService             u:object_r:HelloNativeService_exec:s0

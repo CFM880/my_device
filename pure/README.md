@@ -1,0 +1,2 @@
+/home/cfm880/source/aosp/out/soong/.intermediates/frameworks/base/api-stubs-docs-non-updatable/android_common/gen/aidl/frameworks/base/core/java/android/pure
+/home/cfm880/source/aosp/out/soong/.intermediates/frameworks/base/framework-minus-apex/android_common/javac/shard33/classes/android/pure

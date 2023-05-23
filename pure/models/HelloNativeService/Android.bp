@@ -9,3 +9,15 @@ cc_binary {
         "libbinder",
     ],
 }
+
+cc_binary {
+    name: "HelloNativeTest",
+    srcs: ["HelloNativeTest.cpp"],
+
+    shared_libs: [
+        "liblog",
+        "libcutils",
+        "libutils",
+        "libbinder",
+    ],
+}

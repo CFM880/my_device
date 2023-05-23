@@ -1,0 +1,7 @@
+type HelloNativeService, domain;
+typeattribute HelloNativeService coredomain;
+type HelloNativeService_exec, system_file_type, exec_type, file_type;
+binder_use(HelloNativeService)
+init_daemon_domain(HelloNativeService)
+
+allow HelloNativeService HelloNativeService_service:service_manager { add find };
