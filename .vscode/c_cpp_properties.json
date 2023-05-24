@@ -4,9 +4,9 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "~/source/aosp/frameworks/native/libs/binder/include/",
-                "~/source/aosp/system/core/libutils/include/",
-                "~/source/aosp/system/logging/liblog/include/"
+                "../../frameworks/native/libs/binder/include/",
+                "../../system/core/libutils/include/",
+                "../../system/logging/liblog/include/"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",
