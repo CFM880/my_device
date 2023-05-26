@@ -14,10 +14,10 @@ int main() {
     android::sp<ITVServer> service = ITVServer::getService();
     if (service == nullptr)
     {
-        printf("Failed to get service\n");
+        printf("helloHIDL Failed to get service\n");
         return -1;
     }
-    service->hello("cfm880", [&](hidl_string result){
+    service->hello("helloHIDL cfm880", [&](hidl_string result){
         printf("%s\n", result.c_str());
     }); 
     return 0;

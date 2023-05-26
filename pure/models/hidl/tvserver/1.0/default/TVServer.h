@@ -6,7 +6,7 @@
 #include <hidl/MQDescriptor.h>
 #include <hidl/Status.h>
 
-namespace device::cfm880::pure::tvserver::implementation {
+namespace device::cfm880::pure::tvserver::V1_0::implementation {
 
 using ::android::hardware::hidl_array;
 using ::android::hardware::hidl_memory;
