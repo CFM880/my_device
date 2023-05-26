@@ -6,7 +6,9 @@
                 "${workspaceFolder}/**",
                 "../../frameworks/native/libs/binder/include/",
                 "../../system/core/libutils/include/",
-                "../../system/logging/liblog/include/"
+                "../../system/logging/liblog/include/",
+                "../../system/libhidl/base/include/",
+                "../../system/libhidl/transport/include/"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",

@@ -1,0 +1,5 @@
+package device.cfm880.pure.tvserver@1.0;
+
+interface ITVServer {
+    hello(string name) generates (string result);
+};

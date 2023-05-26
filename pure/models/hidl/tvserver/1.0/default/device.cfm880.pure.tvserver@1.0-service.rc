@@ -1,0 +1,6 @@
+service tvserver /vendor/bin/hw/device.cfm880.pure.tvserver@1.0-service
+	class hal
+	user root
+	group root
+# device/cfm880/pure/models/hidl/tvserver/1.0/default/device.cfm880.pure.tvserver@1.0-service.rc
+# device/cfm880/pure/models/hidl/tvserver/1.0/default/device.cfm880.pure.tvserver@1.0-service.rc

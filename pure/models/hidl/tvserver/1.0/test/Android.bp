@@ -1,0 +1,13 @@
+cc_binary {
+    name: "TVServerTest",
+    vendor: true,
+    srcs: ["TVServerTest.cpp"],
+
+    shared_libs: [
+        "liblog",
+        "libhidlbase",
+        "libhardware",
+        "libutils",
+        "device.cfm880.pure.tvserver@1.0",
+    ],
+}
