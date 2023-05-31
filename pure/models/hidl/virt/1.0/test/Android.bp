@@ -1,0 +1,13 @@
+cc_binary {
+    name: "VirtTest",
+    vendor: true,
+    srcs: ["VirtTest.cpp"],
+
+    shared_libs: [
+        "liblog",
+        "libhidlbase",
+        "libhardware",
+        "libutils",
+        "epam.virt@1.0",
+    ],
+}

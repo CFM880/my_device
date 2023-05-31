@@ -19,7 +19,8 @@ PRODUCT_PACKAGES += \
 	HelloNativeTest \
 	device.cfm880.pure.tvserver@1.0-service \
 	TVServerTest \
-	epam.virt@1.0-service
+	epam.virt@1.0-service \
+	VirtTest
 
 
 # 前面的几个例子，我们只有输出到 system 或者　vendor 分区这两种选择，　其实系统还有其它几个目录可以输出的，下面对这些目录的作用及怎么指定模块的输出分区作下说明：
