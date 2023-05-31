@@ -38,7 +38,7 @@ int main() {
     android::hardware::configureRpcThreadpool(4, true /* will join */);
     sp<IVirt> v = new Virt;
     status_t status = v->registerAsService();
-    LOG_ALWAYS_FATAL_IF(status != OK, "Could not register IVirt .....");
+    LOG_ALWAYS_FATAL_IF(status != OK, "Could not register exit .....");
     ALOGI("IVirt registered !");
     joinRpcThreadpool();
     return 0;
