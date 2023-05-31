@@ -25,6 +25,7 @@ cc_library {
         "libhidlbase",
         // "libhidltransport",
         "libutils",
+        "liblog",
         "device.cfm880.pure.tvserver@1.0",
     ],
 }
