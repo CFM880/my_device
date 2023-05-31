@@ -1,0 +1,1 @@
+https://github.com/arminn/android_vendor_interface_example.git

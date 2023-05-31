@@ -1,6 +1,11 @@
 
 hidl_package_root {
     name: "device.cfm880.pure",
-// if you want to require <some path>/current.txt for interface versioning
+    // if you want to require <some path>/current.txt for interface versioning
+    use_current: true,
+}
+hidl_package_root {
+    name: "epam",
+    // if you want to require <some path>/current.txt for interface versioning
     use_current: true,
 }
