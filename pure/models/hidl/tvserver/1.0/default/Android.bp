@@ -12,6 +12,7 @@ cc_library {
     // '-vendor' or '-<hardware identifier>' etc to distinguish it.
     name: "device.cfm880.pure.tvserver@1.0-service",
     init_rc: ["device.cfm880.pure.tvserver@1.0-service.rc"],
+    vintf_fragments: ["device.cfm880.pure.tvserver@1.0-service.xml"],
     relative_install_path: "hw",
     // FIXME: this should be 'vendor: true' for modules that will eventually be
     // on AOSP.
