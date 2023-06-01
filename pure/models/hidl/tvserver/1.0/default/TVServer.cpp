@@ -2,7 +2,7 @@
 
 #include "TVServer.h"
 
-namespace device::cfm880::pure::tvserver::V1_0::implementation {
+namespace device::cfm880::pure::tvserver::implementation {
 
 // Methods from ::device::cfm880::pure::tvserver::V1_0::ITVServer follow.
 Return<void> TVServer::hello(const hidl_string& name, hello_cb _hidl_cb) {

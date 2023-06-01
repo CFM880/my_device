@@ -1,9 +1,10 @@
 type tvserver, domain;
 
 type tvserver_exec, exec_type, vendor_file_type, file_type;
-hwbinder_use(tvserver);
+
+hwbinder_use(tvserver)
 init_daemon_domain(tvserver)
-add_hwservice(tvserver, tvserver_hwservice)
+add_hwservice(tvserver, tvserver_hwservice);
 
 allow tvserver hwservicemanager_prop:file {map read open getattr};
 allow tvserver system_file:dir {read open getattr search};
