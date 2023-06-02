@@ -13,14 +13,18 @@ using ::android::hardware::hidl_array;
 using ::android::hardware::hidl_memory;
 using ::android::hardware::hidl_string;
 using ::android::hardware::hidl_vec;
+using ::android::hardware::hidl_death_recipient;
 using ::android::hardware::Return;
 using ::android::hardware::Void;
 using ::android::sp;
 using namespace std;
 
+class ClientDeathRecipient;
+
 class TVServer : public V1_0::ITVServer {
 public:
     // Methods from ::device::cfm880::pure::tvserver::V1_0::ITVServer follow.
+    TVServer();
     Return<void> hello(const hidl_string& name, hello_cb _hidl_cb) override;
     Return<void> registerListener(uint32_t pid, const sp<V1_0::ITVServerListener>& listenr) override;
     Return<void> unregisterListener(uint32_t pid) override;
@@ -28,7 +32,7 @@ public:
     // Methods from ::android::hidl::base::V1_0::IBase follow.
 private:
     map<uint32_t, sp<V1_0::ITVServerListener>> mListeners;
-
+    sp<ClientDeathRecipient> mDeathRecipient;
 
 };
 
