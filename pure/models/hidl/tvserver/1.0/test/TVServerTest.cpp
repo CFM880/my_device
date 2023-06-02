@@ -8,9 +8,11 @@
 
 using namespace std;
 using ::android::hardware::hidl_string;
+using ::android::hardware::hidl_death_recipient;
 using ::android::sp;
 using device::cfm880::pure::tvserver::V1_0::ITVServer;
 using device::cfm880::pure::tvserver::V1_0::ITVServerListener;
+android::sp<ITVServer> service = nullptr;
 
 class TVServerListener: public ITVServerListener {
 public:
@@ -20,20 +22,30 @@ public:
     }
 };
 
+
+class ServerDeathRecipient: public hidl_death_recipient {
+    virtual void serviceDied(uint64_t cookie, const android::wp<::android::hidl::base::V1_0::IBase> &who) {
+        printf("serviceDied cookie = %d\n", cookie);
+        service = nullptr;
+    }
+};
+
 int main() {
     sp<ITVServerListener> listener = new TVServerListener();
-    android::sp<ITVServer> service = ITVServer::getService();
+    sp<ServerDeathRecipient> deathRecipient = new ServerDeathRecipient();
+    service = ITVServer::getService();
     if (service == nullptr)
     {
         printf("helloHIDL Failed to get service\n");
         return -1;
     }
+    service->linkToDeath(deathRecipient, 0);
     service->registerListener(getpid(), listener);
     service->hello("helloHIDL cfm880", [&](hidl_string result){
         printf("%s\n", result.c_str());
     }); 
-    sleep(1);
+    sleep(10);
 
-    service->unregisterListener(getpid());
+    // service->unregisterListener(getpid());
     return 0;
 }

@@ -26,3 +26,13 @@ cfm880@cfm880:~/aosp/device/cfm880/pure/models/hidl/tvserver/1.0$ ^C
 cfm880@cfm880:~/aosp/device/cfm880/pure/models/hidl/tvserver/1.0$ ^C
 cfm880@cfm880:~/aosp/device/cfm880/pure/models/hidl/tvserver/1.0$ hidl-gen -o $LOC -Lc++-impl -rdevice.cfm880.pure:device/cfm880/pure/models/hidl $PACKAGE
 cfm880@cfm880:~/aosp/device/cfm880/pure/models/hidl/tvserver/1.0$ 
+
+
+pure:/ # TVServerTest                                                                                                                                                                                               
+helloHIDL helloHIDL cfm880 from TVServer
+onMessage message from server
+serviceDied cookie = 0
+
+pure:/ # ps -e | grep tvserver                                                                                                                                                                                      
+root          1908     1 10903932  5760 binder_wait_for_work 0 S device.cfm880.pure.tvserver@1.0-service
+pure:/ # kill 1908

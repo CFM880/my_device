@@ -25,7 +25,7 @@ Return<void> TVServer::hello(const hidl_string& name, hello_cb _hidl_cb) {
     for (it = mListeners.begin(); it != mListeners.end(); ++it) 
     {
         sp<V1_0::ITVServerListener> listener = it->second;
-        listener->onMessage("message from server %s", name.c_str());
+        listener->onMessage("message from server");
     }
     
     
