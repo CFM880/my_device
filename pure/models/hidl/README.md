@@ -10,3 +10,19 @@ hidl_package_root {
 // use_current: true,
     path: "device/cfm880/pure/models/hidl"
 }
+cfm880@cfm880:~/aosp/device/cfm880/pure/models/hidl/tvserver/1.0$ device.cfm880.pure.tvserver@1.0
+cfm880@cfm880:~/aosp/device/cfm880/pure/models/hidl/tvserver/1.0$ LOC=default
+cfm880@cfm880:~/aosp/device/cfm880/pure/models/hidl/tvserver/1.0$ hidl-gen -o $LOC -Lc++-impl -rdevice.cfm880.pure:device/cfm880/pure/models/hidl $PACKAGE
+cfm880@cfm880:~/aosp/device/cfm880/pure/models/hidl/tvserver/1.0$ hidl-gen -o $LOC -Lc++-impl -rdevice.cfm880.pure:device/cfm880/pure/models/hidl $PACKAGE
+ERROR: device.cfm880.pure.tvserver@1.0::ITVServerListener has hash 92abb0de23e98175b58a1ad17e93976f96e0b95f2f7a21f457f6c29a2835ce26 which does not match hash on record. This interface has been frozen. Do not change it!
+ERROR: Could not parse device.cfm880.pure.tvserver@1.0::ITVServer. Aborting.
+cfm880@cfm880:~/aosp/device/cfm880/pure/models/hidl/tvserver/1.0$ hidl-gen -o $LOC -Lc++-impl -rdevice.cfm880.pure:device/cfm880/pure/models/hidl $PACKAGE
+ERROR: device.cfm880.pure.tvserver@1.0::ITVServer has hash 67e36c17a88e2a40f5b1cd365128185d8c828bad8b6e07b7d38d3238c291b6ea which does not match hash on record. This interface has been frozen. Do not change it!
+ERROR: Could not parse device.cfm880.pure.tvserver@1.0::ITVServer. Aborting.
+cfm880@cfm880:~/aosp/device/cfm880/pure/models/hidl/tvserver/1.0$ hidl-gen -o $LOC -Lc++-impl -rdevice.cfm880.pure:device/cfm880/pure/models/hidl $PACKAGE
+ERROR: device.cfm880.pure.tvserver@1.0::ITVServerListener has hash 92abb0de23e98175b58a1ad17e93976f96e0b95f2f7a21f457f6c29a2835ce26 which does not match hash on record. This interface has been frozen. Do not change it!
+ERROR: Could not parse device.cfm880.pure.tvserver@1.0::ITVServer. Aborting.
+cfm880@cfm880:~/aosp/device/cfm880/pure/models/hidl/tvserver/1.0$ ^C
+cfm880@cfm880:~/aosp/device/cfm880/pure/models/hidl/tvserver/1.0$ ^C
+cfm880@cfm880:~/aosp/device/cfm880/pure/models/hidl/tvserver/1.0$ hidl-gen -o $LOC -Lc++-impl -rdevice.cfm880.pure:device/cfm880/pure/models/hidl $PACKAGE
+cfm880@cfm880:~/aosp/device/cfm880/pure/models/hidl/tvserver/1.0$ 

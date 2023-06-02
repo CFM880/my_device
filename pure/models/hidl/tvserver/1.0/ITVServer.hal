@@ -1,5 +1,8 @@
 package device.cfm880.pure.tvserver@1.0;
 
+import ITVServerListener;
 interface ITVServer {
     hello(string name) generates (string result);
+    registerListener(uint32_t pid, ITVServerListener listener);
+    unregisterListener(uint32_t pid);
 };

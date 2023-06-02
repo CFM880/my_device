@@ -1,0 +1,5 @@
+package device.cfm880.pure.tvserver@1.0;
+
+interface ITVServerListener {
+    oneway onMessage(string message);
+};

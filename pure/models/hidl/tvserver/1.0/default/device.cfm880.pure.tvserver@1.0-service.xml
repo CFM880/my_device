@@ -7,5 +7,9 @@
             <name>ITVServer</name>
             <instance>default</instance>
         </interface>
+        <interface>
+            <name>ITVServerListener</name>
+            <instance>default</instance>
+        </interface>
     </hal>
 </manifest>
