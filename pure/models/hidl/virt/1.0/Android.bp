@@ -17,7 +17,6 @@
 hidl_interface {
     name: "epam.virt@1.0",
     root: "epam",
-    system_ext_specific: true,
     srcs: [
         "IVirt.hal",
     ],

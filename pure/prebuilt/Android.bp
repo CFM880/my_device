@@ -43,10 +43,3 @@ cc_prebuilt_library_shared {
         none: true,
     },
 }
-android_app_import {
-    name:"nRFConnect",
-    apk:"apk/nRF.Connect.4.25.0.apk",
-    vendor:true,
-    presigned:true,
-    default_dev_cert:false,
-}

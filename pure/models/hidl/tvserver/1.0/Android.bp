@@ -3,7 +3,6 @@
 hidl_interface {
     name: "device.cfm880.pure.tvserver@1.0",
     root: "device.cfm880.pure",
-    system_ext_specific: true,
     srcs: [
         "ITVServer.hal",
         "ITVServerListener.hal",
