@@ -1,0 +1,1 @@
+实际上的vendor.img是google编译好的，所以我们需要将我们自己的东西放到system下

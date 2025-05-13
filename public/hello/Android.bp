@@ -1,7 +1,7 @@
 cc_binary {                 // 模块类型为可执行文件
     name: "hello",          // 模块名    
     srcs: ["hello.cpp"],    // 源文件列表
-    vendor: true,           // 编译出来放在/vender 目录下（默认是system目录下）
+    vendor: false,           // 编译出来放在/vender 目录下（默认是system目录下）
     shared_libs: [          // 编译依赖的动态库
         "liblog",
     ],

@@ -3,40 +3,61 @@
 
 cc_prebuilt_binary {
     name: "busybox",
-    srcs: ["vendor/bin/busybox-x86_64"],
+   
     strip: { none: true, },
-    vendor: true,
+    vendor: false,
     // Bypass because soname mismatch
     check_elf_files: false,
     allow_undefined_symbols: true,  // LIBC_PRIVATE
+    arch: {
+        x86: {
+            srcs: ["vendor/bin/busybox/x86/busybox"],
+        },
+        x86_64: {
+            srcs: ["vendor/bin/busybox/x86_64/busybox"],
+        },
+        arm64: {
+            srcs: ["vendor/bin/busybox/arm64/busybox"],
+        },
+        arm: {
+            srcs: ["vendor/bin/busybox/arm/busybox"],
+        },
+    },
+
 }
 // https://ci.android.com/builds/submitted/8326303/linux/latest/raw/java.html#java_import
 java_import {
     name:"androidasynchttp",
     installable:true, // 如果这个 jar 包需要安装到系统，则需要配置 installable 为 true。如果只是作为编译时提供接口而已， 则不需要设置 installable。
-    vendor: true,
+    vendor: false,
     jars:[
         "libs/jars/android-async-http-1.4.11.jar"
     ],
 }
 cc_prebuilt_library_shared {
     name:"pure_utils1",
-    export_include_dirs:["libs/include"],
-    vendor:true,
+    export_include_dirs:["libs/libpure_utils1/include"],
+    vendor:false,
     check_elf_files:false,
     arch: {
         x86: {
-            srcs:["libs/lib/libpure_utils1.so"],
+            srcs:["libs/libpure_utils1/libs/x86/libpure_utils1.so"],
              shared_libs:[
                 "liblog"
             ]
         },
         x86_64:{
-            srcs:["libs/lib64/libpure_utils1.so"],
+            srcs:["libs/libpure_utils1/libs/x86_64/libpure_utils1.so"],
             shared_libs:[
                 "liblog"
             ]
-        }
+        },
+        arm64:{
+            srcs:["libs/libpure_utils1/libs/arm64/libpure_utils1.so"],
+            shared_libs:[
+                "liblog"
+            ]
+        },
     },
     compile_multilib: "both",
     strip: {
@@ -46,7 +67,7 @@ cc_prebuilt_library_shared {
 android_app_import {
     name:"nRFConnect",
     apk:"apk/nRF.Connect.4.25.0.apk",
-    vendor:true,
+    vendor:false,
     presigned:true,
     default_dev_cert:false,
 }
